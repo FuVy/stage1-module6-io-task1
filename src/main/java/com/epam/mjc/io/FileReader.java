@@ -18,18 +18,11 @@ public class FileReader {
                 if (line.startsWith("Name: ")) {
                     name = line.replace("Name: ", "");
                 } else if (line.startsWith("Age: ")) {
-                    try {
-                        age = Integer.parseInt(line.replace("Age: ", ""));
-                    } catch (NumberFormatException e) {
-                    }
+                    age = Integer.parseInt(line.replace("Age: ", ""));
                 } else if (line.startsWith("Email: ")) {
-                    email = line = line.replace("Email: ", "");
+                    email = line.replace("Email: ", "");
                 } else if (line.startsWith("Phone: ")) {
-                    try {
-                        phone = Long.parseLong(line.replace("Phone: ", ""));
-                    } catch (NumberFormatException e) {
-
-                    }
+                    phone = Long.parseLong(line.replace("Phone: ", ""));
                 }
             }
             return new Profile(name, age, email, phone);
